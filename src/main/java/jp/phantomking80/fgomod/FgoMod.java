@@ -17,13 +17,14 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-// ここでの値は、META-INF/mods.tomlファイルのエントリと一致する必要があります
-// The value here should match an entry in the META-INF/mods.toml file
-@Mod("fgomod")
+// ここでの値は、META-INF/mods.tomlファイルのエントリと一致させる
+@Mod(FgoMod.MOD_ID)
 public class FgoMod {
 
-  // log4jロガーを直接参照します。
-  // Directly reference a log4j logger.
+  /** Mod Id */
+  public static final String MOD_ID = "fgomod";
+
+  /** log4jロガー */
   private static final Logger LOGGER = LogManager.getLogger();
 
   public FgoMod() {

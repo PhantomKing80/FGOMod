@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
  */
 public class ModItemGroup extends ItemGroup {
 
+  /** FGO Mod用アイテムグループ */
   public static final ItemGroup FGO_GROUP = new ModItemGroup();
 
 

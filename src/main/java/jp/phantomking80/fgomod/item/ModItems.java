@@ -6,18 +6,18 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 /**
- * アイテム全般の宣言・登録
+ * アイテム全般の宣言・登録<br>
  * 宣言と登録を想定しているためEventBusSubscriberのアノテーションをつける
  */
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModItems {
 
-  // QP
+  /** QP */
   public static final Item QUANTUM_PIECE = new QuantumPieceItem();
 
   /**
    * アイテムの登録
-   * 
+   *
    * @param itemRegistryEvent
    */
   @SubscribeEvent

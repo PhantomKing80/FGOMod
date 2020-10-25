@@ -17,6 +17,9 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+/**
+ * FGO Mod
+ */
 // ここでの値は、META-INF/mods.tomlファイルのエントリと一致させる
 @Mod(FgoMod.MOD_ID)
 public class FgoMod {
@@ -27,9 +30,10 @@ public class FgoMod {
   /** log4jロガー */
   private static final Logger LOGGER = LogManager.getLogger();
 
+  /**
+   * コンストラクタ
+   */
   public FgoMod() {
-    // modloadingのセットアップメソッドを登録します
-    // Register the setup method for modloading
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
     // modloading用のenqueueIMCメソッドを登録します
     // Register the enqueueIMC method for modloading
@@ -37,8 +41,6 @@ public class FgoMod {
     // modloading用のprocessIMCメソッドを登録します
     // Register the processIMC method for modloading
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
-    // modloading用のdoClientStuffメソッドを登録します
-    // Register the doClientStuff method for modloading
     FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
     // 興味のあるサーバーやその他のゲームイベントに登録します
@@ -46,14 +48,23 @@ public class FgoMod {
     MinecraftForge.EVENT_BUS.register(this);
   }
 
+  /**
+   * セットアップ
+   *
+   * @param event イベント
+   */
   private void setup(final FMLCommonSetupEvent event) {
     LOGGER.info("PREINIT START");
     LOGGER.info("PREINIT END");
     LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
   }
 
+  /**
+   * クライアントでのみ実行する処理
+   *
+   * @param event イベント
+   */
   private void doClientStuff(final FMLClientSetupEvent event) {
-    // do something that can only be done on the client
     LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
   }
 
@@ -71,10 +82,14 @@ public class FgoMod {
         event.getIMCStream().map(m -> m.getMessageSupplier().get()).collect(Collectors.toList()));
   }
 
-  // You can use SubscribeEvent and let the Event Bus discover methods to call
+  /**
+   * サーバーの起動時に行う処理
+   *
+   * @param event イベント
+   */
+  // SubscribeEventを使用して、EventBusに呼び出すメソッドを検出させることができます
   @SubscribeEvent
   public void onServerStarting(FMLServerStartingEvent event) {
-    // do something when the server starts
     LOGGER.info("HELLO from server starting");
   }
 

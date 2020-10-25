@@ -2,8 +2,14 @@ package jp.phantomking80.fgomod.item;
 
 import net.minecraft.item.Item;
 
+/**
+ * QuantumPieceの設定
+ */
 public class QuantumPieceItem extends Item {
 
+  /**
+   * コンストラクタ
+   */
   public QuantumPieceItem() {
     // アイテムグループを設定
     super(new Item.Properties().group(ModItemGroup.FGO_GROUP));

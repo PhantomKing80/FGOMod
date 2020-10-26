@@ -1,6 +1,9 @@
 {
 	"itemGroup.fgomod": "FgoMod",
 
-	"item.fgomod.quantum_piece": "クォンタムピース"
+	"item.fgomod.quantum_piece": "クォンタムピース",
 
+	"item.fgomod.mana_prism": "マナプリズム",
+
+	"item.fgomod.rare_prism": "レアプリズム"
 }
